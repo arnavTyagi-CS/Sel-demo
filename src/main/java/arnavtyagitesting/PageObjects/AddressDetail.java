@@ -25,12 +25,13 @@ public class AddressDetail extends AbstractComponent {
 	WebElement submit;
 	By records = By.cssSelector(".ta-results");
 	
-	public void addressDetail(String keyword)
+	public void addressDetail(String keyword) throws InterruptedException
 	{
 		 Actions action =  new Actions(driver);
 		 action.sendKeys(searchbox, keyword).perform();
 		 waitTimeComponent(records);
 		 userRegion.click();
+		 Thread.sleep(1000);
 		 submit.click();
 	}
 
